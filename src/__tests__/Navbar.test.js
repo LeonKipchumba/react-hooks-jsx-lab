@@ -1,17 +1,18 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import { name, city } from "../data/User";
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 
 test("renders a <nav> element", () => {
-  const { container } = render(<NavBar />);
+  const { container } = render(<Navbar />);
 
   const nav = container.querySelector("nav");
   expect(nav).toBeInTheDocument();
 });
 
 test("renders two <a> elements inside the <nav> element", () => {
-  const { container } = render(<NavBar />);
+  const { container } = render(<Navbar />);
 
   const nav = container.querySelector("nav");
   const anchorTags = nav.querySelectorAll("a"); // find all the child <a> elements
@@ -20,7 +21,7 @@ test("renders two <a> elements inside the <nav> element", () => {
 });
 
 test("renders each <a> element with the correct attributes", () => {
-  render(<NavBar />);
+  render(<Navbar />);
 
   const home = screen.queryByText(/home/i);
 
